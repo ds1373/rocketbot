@@ -1,14 +1,8 @@
 <template>
   <b-container>
     <b-row>
+      <UserData />
       <b-col>
-        <!--        User data -->
-        <h1>User Data</h1>
-        <ul>
-          <li>Name: {{ getForm.name }}</li>
-          <li>Family: {{ getForm.family }}</li>
-          <li>Address: {{ getForm.address }}</li>
-        </ul>
         <nuxt-link to="/">Back to Form</nuxt-link>
       </b-col>
     </b-row>
@@ -16,15 +10,11 @@
 </template>
 
 <script>
+import UserData from '@/components/User/UserData'
+
 export default {
   name: 'index',
-  computed: {
-    getForm() {
-      return localStorage.getItem('userData')
-        ? JSON.parse(localStorage.getItem('userData'))
-        : {}
-    },
-  },
+  components: { UserData },
 }
 </script>
 
